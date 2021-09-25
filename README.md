@@ -2,31 +2,32 @@
 
 Playing with IPSets in a Ubuntu docker container.
 
-Works on OSX.
+Works on OSX and Docker Desktop.
 
-´´´´
+```
 ./run.sh # run a ubuntu docker container
-´´´´
+```
 
 In the container: Ping some IPs
 
-´´´´
+```
 ./klaeff-ping.sh
 ./google-ping.sh
-´´´´
-This should work.
+```
+
+Ping should work for both IPs.
 
 Configure an IPSet:
 
-´´´´
+```
 ./config-on.sh
-´´´´
+```
 
-The klaeff IP should be blocked.
-The Google IP should not be blocked (even though it is on block_list).
+Ping to klaeff IP should be blocked.
+Ping to  Google IP should not be blocked (even though it is on block_list).
 
-´´´´
+```
 ./config-off.sh
-´´´´
+```
 
-Nothing is blocked.
+No blocking anymore.
