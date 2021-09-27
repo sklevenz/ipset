@@ -24,7 +24,8 @@ Configure an IPSet:
 ```
 
 Ping to klaeff IP should be blocked.
-Ping to  Google IP should not be blocked (even though it is on block_list).
+Ping to Google IP should be blocked.
+-Ping to  Google IP should not be blocked (even though it is on block_list). not yet supported-
 
 ```
 ./config-off.sh
