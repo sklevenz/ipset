@@ -12,3 +12,9 @@ ipset -N block_list nethash
 ipset -A block_list 142.251.5.138/32 # we try to block google but this is secured by allow_list
 ipset -A block_list 81.169.145.156/32 # block klaeff.de
 ipset -L block_list
+
+sudo iptables -I INPUT -m set --match-set block_list src -j DROP
+sudo iptables -I FORWARD -m set --match-set block_list src -j DROP
+
+sudo iptables -I INPUT -m set --match-set allow_list src -j DROP
+sudo iptables -I FORWARD -m set --match-set allow_list src -j DROP
